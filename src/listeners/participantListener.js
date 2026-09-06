@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 const MAX_ATTEMPTS = 3;
 
 function sleep(ms) {

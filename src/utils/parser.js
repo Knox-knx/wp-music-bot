@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export function parseCommand(body, prefix) {
   if (typeof body !== 'string' || typeof prefix !== 'string') return null;
   if (!body.startsWith(prefix)) return null;

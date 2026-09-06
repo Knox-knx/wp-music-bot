@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export function resolveTarget(ctx) {
   if (Array.isArray(ctx?.mentionedIds) && ctx.mentionedIds.length > 0) {
     return ctx.mentionedIds[0] ?? null;

@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export function sanitizeText(text, maxLength) {
   if (typeof text !== 'string') return '';
   const cleaned = text

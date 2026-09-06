@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import { validateSearchQuery } from '../../utils/validators.js';
 
 export default {

@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import { BotError } from '../utils/errors.js';
 import { createSeededRandom, hashString } from '../utils/random.js';
 import { isValidAdInterval } from '../utils/validators.js';

@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export default {
   name: 'pause',
   aliases: [],

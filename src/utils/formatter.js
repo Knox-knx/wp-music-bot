@@ -1,29 +1,66 @@
+// codes by: @LouisPy
+import { BOT_CREDITS_FOOTER } from './credits.js';
+
 export function boxLine(char = '═', width = 30) {
   return `╔${char.repeat(width)}╗`;
 }
 
 export function buildMainMenu({ showAdmin }) {
+  // All commands in ONE message — codes by: @LouisPy
   const lines = [
     '╔══════════════════════════════╗',
     '         🎵 WHATSAPP BOT',
+    '        ALL COMMANDS (29)',
     '╚══════════════════════════════╝',
     '',
-    '🎵 MUSIC',
-    '!song <name>',
-    '!find <name>',
-    '!play <name>',
-    '!lyrics <name>',
+    '🎵 MUSIC (public)',
+    '!song <name> — search & send song',
+    '!find <name> — alias of !song',
+    '!play <name> — live call playback (group)',
+    '!stop — stop live playback',
+    '!pause — pause live playback',
+    '!resume — resume live playback',
+    '!skip — skip live playback',
+    '!playing — what is playing now',
+    '!lyrics <name> — lyrics by title',
     '!lyrics Artist - Title',
     '',
-    'ℹ️ GENERAL',
-    '!menu',
-    '!help [command]',
-    '!ping',
+    'ℹ️ GENERAL (public)',
+    '!menu — this full list',
+    '!help [command] — help + Owner/Public tag',
+    '!ping — bot alive check',
+    '!myrole — check your OWNER/ADMIN role',
+    '',
+    '👥 MODERATION (owner 🔒, groups only)',
+    '!kick @user',
+    '!mute @user',
+    '!unmute @user',
+    '!ban @user',
+    '!unban @user',
+    '!antispam on|off|status',
+    '',
+    '📢 ADS (owner 🔒)',
+    '!setad <message>',
+    '!adinterval <2-5>',
+    '!ads',
+    '!adstart',
+    '!adstop',
+    '!adstatus',
+    '!adgroups',
+    '!adtoggle',
+    '',
+    '📊 SYSTEM (owner 🔒)',
     '!stats',
+    '!voicestatus',
+    '',
+    '👑 OWNER (owner 🔒)',
+    '!owners — full owner command list',
+    '!myrole @user — check another user (owner/admin)',
   ];
-  if (showAdmin) {
-    lines.push('', '🛡️ ADMIN', ...buildAdminPanel(false).split('\n').filter(Boolean));
+  if (!showAdmin) {
+    lines.push('', '🔒 = owner-only. Use !myrole to check your role.');
   }
+  lines.push('', BOT_CREDITS_FOOTER);
   return lines.join('\n');
 }
 
@@ -50,8 +87,12 @@ export function buildAdminPanel(header = true) {
     '',
     '📊 SYSTEM',
     '!stats',
+    '',
+    '👑 OWNER',
+    '!owners — full owner command list',
+    '!myrole [@user] — check owner/admin role',
   ];
-  return header ? `🛡️ ADMIN PANEL\n${lines.join('\n')}` : lines.join('\n');
+  return header ? `🛡️ ADMIN PANEL\n${lines.join('\n')}\n\n${BOT_CREDITS_FOOTER}` : lines.join('\n');
 }
 
 export function formatDuration(totalSeconds) {
@@ -103,6 +144,8 @@ export function formatStats(stats, uptimeSeconds) {
     `Banned users: ${stats.banned}`,
     `Moderation events: ${stats.moderationEvents}`,
     `Ads sent today: ${stats.adsSentToday}`,
+    '',
+    BOT_CREDITS_FOOTER,
   ].join('\n');
 }
 

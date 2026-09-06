@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export const MAX_MIGRATION_VERSION = 1;
 
 const MIGRATIONS = [

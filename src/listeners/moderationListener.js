@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export function createModerationListener({ db, permission, logger }) {
   async function handleMessage(chat, message, botWid) {
     if (!chat?.isGroup) return false;

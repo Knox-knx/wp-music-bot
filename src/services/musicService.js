@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import fs from 'node:fs';
 import pLimit from 'p-limit';
 import wweb from 'whatsapp-web.js';

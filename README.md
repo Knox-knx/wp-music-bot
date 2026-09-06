@@ -10,6 +10,7 @@ A production-ready WhatsApp bot built with **Node.js**, **whatsapp-web.js**, **S
 (mute / ban / kick / anti-spam), and delivers scheduled advertisements to configured groups.
 It can also start a live WhatsApp group voice call and stream a song into it (`!play`),
 with automatic fallback to a plain audio message when a live call is unavailable.
+*(Live voice-call playback: coming soon / currently not available.)*
 
 > ⚠️ **Copyright & compliance disclaimer**
 > This bot downloads audio from public sources for personal, non-commercial use. You are
@@ -31,7 +32,7 @@ with automatic fallback to a plain audio message when a live call is unavailable
 7. [Commands](#7-commands)
 8. [Architecture & project structure](#8-architecture--project-structure)
 9. [How the music pipeline works](#9-how-the-music-pipeline-works)
-10. [Live voice-call playback (`!play`)](#10-live-voice-call-playback-play)
+10. [Live voice-call playback (`!play`) — coming soon / currently not available](#10-live-voice-call-playback-play)
 11. [Production deployment](#11-production-deployment)
 12. [Persistence, backup & restart semantics](#12-persistence-backup--restart-semantics)
 13. [Health check & logging](#13-health-check--logging)
@@ -49,7 +50,7 @@ with automatic fallback to a plain audio message when a live call is unavailable
 | Area | What it does |
 |---|---|
 | 🎵 Music | `!song <name>` (alias `!find`) searches YouTube, downloads the audio stream, converts it to MP3 with FFmpeg, sends it to the chat and cleans up temp files |
-| 📞 Live playback | `!play <name>` starts a live WhatsApp group voice call and streams the song as the call's mic; `!stop`, `!pause`, `!resume`, `!skip`, `!playing`, `!voicestatus` control it (auto-falls back to an audio message if a live call cannot be established; groups only) |
+| 📞 Live playback *(coming soon / currently not available)* | `!play <name>` starts a live WhatsApp group voice call and streams the song as the call's mic; `!stop`, `!pause`, `!resume`, `!skip`, `!playing`, `!voicestatus` control it (auto-falls back to an audio message if a live call cannot be established; groups only) |
 | 📝 Lyrics | `!lyrics <name>` / `!lyrics Artist - Title` via LRCLIB (free, keyless) |
 | 🛡️ Moderation | `!kick`, `!mute`, `!unmute`, `!ban`, `!unban` — persistent per-group records |
 | ⚡ Anti-spam | `!antispam on\|off\|status`; configurable rate limit (delete / warn / mute / kick actions), in-memory tracking with automatic cleanup |
@@ -232,7 +233,7 @@ Prefix is configurable via `BOT_PREFIX` (default `!`). 27 commands total
 !lyrics <name>        lyrics by title
 !lyrics Artist - Title
 
-📞 LIVE PLAYBACK (groups only, needs VOICE_CALL_ENABLED=true)
+📞 LIVE PLAYBACK (coming soon / currently not available — groups only, needs VOICE_CALL_ENABLED=true)
 !play <name>          start a live group voice call and stream the song
                       (auto-falls back to an audio message if a live call
                       cannot be established)
@@ -370,6 +371,9 @@ Key design decisions:
 ---
 
 ## 10. Live voice-call playback (`!play`)
+
+> 🚧 **Coming soon / currently not available.** The live voice-call playback feature
+> described below is planned but not yet available for use.
 
 When `VOICE_CALL_ENABLED=true`, `!play <name>` downloads the track exactly like `!song`
 and then, instead of sending a file, starts a **real WhatsApp group voice call** from the

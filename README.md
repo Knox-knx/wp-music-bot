@@ -1,9 +1,13 @@
-<<<<<<< HEAD
 # WhatsApp Bot — Music, Lyrics, Moderation & Advertisement
 
+![Node](https://img.shields.io/badge/node-%E2%89%A520-339933?logo=node.js&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Tests](https://img.shields.io/badge/tests-197%20passing-brightgreen)
+![Status](https://img.shields.io/badge/status-production--ready-success)
+
 A production-ready WhatsApp bot built with **Node.js**, **whatsapp-web.js**, **SQLite** and
-**yt-dlp**. It can search and send music as audio messages, look up lyrics, moderate groups
-(mute / ban / kick / anti-spam) and deliver scheduled advertisements to configured groups.
+**yt-dlp**. It searches and sends music as audio messages, looks up lyrics, moderates groups
+(mute / ban / kick / anti-spam), and delivers scheduled advertisements to configured groups.
 It can also start a live WhatsApp group voice call and stream a song into it (`!play`),
 with automatic fallback to a plain audio message when a live call is unavailable.
 
@@ -621,7 +625,3 @@ After updating, verify `curl -s http://127.0.0.1:3000/health` reports `"whatsapp
 ## 19. License
 
 MIT — use at your own risk. See `package.json`.
-=======
-# Whatsapp-music_bot
->>>>>>> c28a1aecc0eb72cb048d91e706382d1288702a9b
-# wp-music-bot

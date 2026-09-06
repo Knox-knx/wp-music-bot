@@ -1,0 +1,31 @@
+[Unit]
+Description=WhatsApp Music, Lyrics, Moderation & Advertisement Bot
+Documentation=https://github.com/anomalyco/opencode
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=whatsappbot
+Group=whatsappbot
+WorkingDirectory=/opt/whatsapp-bot
+# Loads environment variables from /opt/whatsapp-bot/.env
+EnvironmentFile=/opt/whatsapp-bot/.env
+ExecStart=/usr/bin/node src/app.js
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+KillSignal=SIGTERM
+
+# --- Hardening ---
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/whatsapp-bot
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

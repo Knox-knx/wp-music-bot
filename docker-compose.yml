@@ -1,0 +1,42 @@
+services:
+  whatsapp-bot:
+    build: .
+    image: whatsapp-bot:latest
+    container_name: whatsapp-bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - BROWSER_EXECUTABLE_PATH=/usr/bin/chromium
+      - BROWSER_HEADLESS=true
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - auth_data:/app/.wwebjs_auth
+      - bot_database:/app/database
+      - bot_logs:/app/logs
+      - bot_tmp:/app/tmp
+      - bot_cache:/app/cache
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  auth_data:
+  bot_database:
+  bot_logs:
+  bot_tmp:
+  bot_cache:

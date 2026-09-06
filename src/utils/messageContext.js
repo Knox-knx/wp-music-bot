@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export function isGroupId(chatId) {
   return Boolean(chatId && chatId.endsWith('@g.us'));
 }

@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 const SETTING_PREFIX = 'antispam_';
 
 export function createAntiSpamService({

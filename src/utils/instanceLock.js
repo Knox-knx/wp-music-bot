@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import fs from 'node:fs';
 
 const LOCK_TEXT = (pid, startedAt) =>

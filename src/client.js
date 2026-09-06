@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import pkg from 'whatsapp-web.js';
 
 const { Client, LocalAuth } = pkg;

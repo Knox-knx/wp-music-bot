@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import 'dotenv/config';
 import qrcode from 'qrcode-terminal';
 import { loadConfig } from './config.js';

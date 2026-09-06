@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 import { chunkText } from '../../utils/formatter.js';
 import { parseLyricsQuery, validateSearchQuery } from '../../utils/validators.js';
 

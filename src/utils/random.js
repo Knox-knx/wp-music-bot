@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export function hashString(input) {
   let h = 2166136261;
   for (let i = 0; i < input.length; i += 1) {

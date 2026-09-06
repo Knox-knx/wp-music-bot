@@ -1,8 +1,9 @@
+// codes by: @LouisPy
 import { buildMainMenu } from '../../utils/formatter.js';
 
 export default {
   name: 'menu',
-  aliases: [],
+  aliases: ['mainmenu', 'commands'],
   description: 'Show the main menu.',
   usage: '!menu',
   example: '!menu',

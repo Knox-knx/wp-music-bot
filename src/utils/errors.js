@@ -1,3 +1,4 @@
+// codes by: @LouisPy
 export class BotError extends Error {
   constructor(message, { kind = 'bot_error', userFacing = true, cause = null } = {}) {
     super(message);
